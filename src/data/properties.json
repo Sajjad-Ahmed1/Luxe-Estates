@@ -1,0 +1,188 @@
+[
+  {
+    "id": "property-001",
+    "title": "Luxury Villa — Palm Waterfront",
+    "price": "$850,000",
+    "priceNum": 850000,
+    "location": "Dubai, UAE",
+    "type": "Villa",
+    "city": "Dubai",
+    "beds": 5,
+    "baths": 6,
+    "sqft": 7200,
+    "videoSrc": "/src/assets/videos/vidu-video-3230724334416434.mp4",
+    "thumbnail": "/assets/thumbnails/property-001.jpg",
+    "tags": ["Featured", "Waterfront", "Pool"],
+    "fullDescription": "Nestled on the iconic Palm Jumeirah, this breathtaking waterfront villa redefines the art of luxury living. Floor-to-ceiling glass walls frame uninterrupted panoramas of the Arabian Gulf, flooding every room with natural light and an ever-changing seascape. The bespoke interiors — curated by one of Dubai's most celebrated design studios — weave marble, aged walnut, and brushed gold into a seamless narrative of refinement. A private beach, resort-scale infinity pool, and dedicated concierge team ensure every moment is effortlessly extraordinary.",
+    "amenities": ["Smart Home Automation","Infinity Pool","Private Gym","Wine Cellar","Home Cinema","Concierge Service","Rooftop Terrace","Spa & Sauna"],
+    "agentInfo": { "name": "Layla Al-Rashid", "phone": "+971501234567" },
+    "images": [
+      "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=1200",
+      "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1200",
+      "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200",
+      "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1200",
+      "https://images.unsplash.com/photo-1568605114967-8130f3a36994?w=1200"
+    ],
+    "coordinates": { "lat": 25.1124, "lng": 55.1390 },
+    "nearbyPlaces": [
+      { "name": "Palm Monorail", "distance": "0.3 km" },
+      { "name": "Nakheel Mall", "distance": "1.2 km" },
+      { "name": "International School", "distance": "2.1 km" }
+    ]
+  },
+  {
+    "id": "property-002",
+    "title": "The Residences — Sky Penthouse",
+    "price": "$1,200,000",
+    "priceNum": 1200000,
+    "location": "Abu Dhabi, UAE",
+    "type": "Penthouse",
+    "city": "Abu Dhabi",
+    "beds": 4,
+    "baths": 5,
+    "sqft": 5900,
+    "videoSrc": "/src/assets/videos/vidu-video-3230770904399032.mp4",
+    "thumbnail": "/assets/thumbnails/property-002.jpg",
+    "tags": ["Penthouse", "Skyline View", "Concierge"],
+    "fullDescription": "Perched at the crown of Abu Dhabi's most prestigious residential tower, this sky penthouse commands a 360° panorama of the city skyline and the shimmering Corniche. A private rooftop terrace with a plunge pool and outdoor kitchen places this residence among the most coveted addresses in the Emirates. Double-height living spaces, gallery-worthy art walls, and a dedicated private lift lobby create a home that transcends conventional luxury. Every detail — from the bespoke Italian joinery to the integrated Butler Service — is calibrated for an uncompromising lifestyle.",
+    "amenities": ["Smart Home Automation","Rooftop Plunge Pool","Private Gym","Home Cinema","Concierge Service","Butler Service","Spa & Sauna","Wine Cellar"],
+    "agentInfo": { "name": "Marcus Holt", "phone": "+971509876543" },
+    "images": [
+      "https://images.unsplash.com/photo-1567684014761-b65e2e59b9eb?w=1200",
+      "https://images.unsplash.com/photo-1574362848149-11496d93a7c7?w=1200",
+      "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=1200",
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200",
+      "https://images.unsplash.com/photo-1616137422495-1e9e46e2aa77?w=1200"
+    ],
+    "coordinates": { "lat": 24.4539, "lng": 54.3773 },
+    "nearbyPlaces": [
+      { "name": "Abu Dhabi Airport", "distance": "28 km" },
+      { "name": "Yas Mall", "distance": "18 km" },
+      { "name": "International School", "distance": "3.5 km" }
+    ]
+  },
+  {
+    "id": "property-003",
+    "title": "Grand Estate — Desert Oasis",
+    "price": "$680,000",
+    "priceNum": 680000,
+    "location": "Riyadh, Saudi Arabia",
+    "type": "Estate",
+    "city": "Riyadh",
+    "beds": 6,
+    "baths": 7,
+    "sqft": 9100,
+    "videoSrc": "/src/assets/videos/vidu-video-3230781312404581.mp4",
+    "thumbnail": "/assets/thumbnails/property-003.jpg",
+    "tags": ["Estate", "Private Garden", "Infinity Pool"],
+    "fullDescription": "Spread across more than 9,000 square feet within Riyadh's most exclusive private enclave, this grand estate is a sanctuary of calm, heritage, and contemporary elegance. Mature palms and sculpted gardens envelop a resort-scale infinity pool, while the interiors draw from a palette of Saharan sandstone, hammered brass, and hand-woven textiles. The formal Majlis, outdoor entertainment pavilion, and fully staffed service wing make this estate as suited to grand entertaining as to quiet family life.",
+    "amenities": ["Smart Home Automation","Infinity Pool","Private Gym","Home Cinema","Spa & Sauna","Concierge Service","Rooftop Terrace","Wine Cellar"],
+    "agentInfo": { "name": "Noor Al-Sayed", "phone": "+966553210987" },
+    "images": [
+      "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=1200",
+      "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=1200",
+      "https://images.unsplash.com/photo-1583608205776-bfd35f0d9f83?w=1200",
+      "https://images.unsplash.com/photo-1599427303058-f04cbcf4756f?w=1200",
+      "https://images.unsplash.com/photo-1523217582562-09d0def993a6?w=1200"
+    ],
+    "coordinates": { "lat": 24.7136, "lng": 46.6753 },
+    "nearbyPlaces": [
+      { "name": "King Khalid Airport", "distance": "35 km" },
+      { "name": "Riyadh Gallery Mall", "distance": "8 km" },
+      { "name": "International School", "distance": "4.2 km" }
+    ]
+  },
+  {
+    "id": "property-004",
+    "title": "Clifftop Villa — Marbella Horizon",
+    "price": "$950,000",
+    "priceNum": 950000,
+    "location": "Marbella, Spain",
+    "type": "Villa",
+    "city": "Dubai",
+    "beds": 5,
+    "baths": 5,
+    "sqft": 6800,
+    "videoSrc": "/src/assets/videos/vidu-video-3230770904399032.mp4",
+    "thumbnail": "/assets/thumbnails/property-004.jpg",
+    "tags": ["Clifftop", "Sea View", "Infinity Pool"],
+    "fullDescription": "Commanding the Marbella coastline from an elevated clifftop position, this architectural masterpiece delivers unbroken views of the Mediterranean from every room. Clean Iberian lines, whitewashed stone, and native landscaping create a home in complete harmony with its dramatic natural setting. The cascading infinity pool appears to pour directly into the sea below, while a private helipad and underground garage make arrival as effortless as the lifestyle it promises.",
+    "amenities": ["Smart Home Automation","Infinity Pool","Private Gym","Wine Cellar","Home Cinema","Concierge Service","Rooftop Terrace","Spa & Sauna"],
+    "agentInfo": { "name": "Layla Al-Rashid", "phone": "+971501234567" },
+    "images": [
+      "https://images.unsplash.com/photo-1505873242700-f289a29e1724?w=1200",
+      "https://images.unsplash.com/photo-1416331108676-a22ccb276e35?w=1200",
+      "https://images.unsplash.com/photo-1534430480872-3498386e7856?w=1200",
+      "https://images.unsplash.com/photo-1598928506311-c55ded91a20c?w=1200",
+      "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1200"
+    ],
+    "coordinates": { "lat": 36.5100, "lng": -4.8800 },
+    "nearbyPlaces": [
+      { "name": "Puerto Banús Marina", "distance": "3.2 km" },
+      { "name": "Marbella Airport", "distance": "45 km" },
+      { "name": "International School", "distance": "5.1 km" }
+    ]
+  },
+  {
+    "id": "property-005",
+    "title": "The Pearl — Marina Crown",
+    "price": "$1,450,000",
+    "priceNum": 1450000,
+    "location": "Doha, Qatar",
+    "type": "Penthouse",
+    "city": "Abu Dhabi",
+    "beds": 5,
+    "baths": 6,
+    "sqft": 6400,
+    "videoSrc": "/src/assets/videos/vidu-video-3230781312404581.mp4",
+    "thumbnail": "/assets/thumbnails/property-005.jpg",
+    "tags": ["Penthouse", "Marina View", "Featured"],
+    "fullDescription": "Rising above the world-renowned Pearl Qatar island development, this extraordinary penthouse occupies the entire crown floor of the Marina Crown tower. Sweeping 270° views encompass the marina, the Persian Gulf, and the glittering Doha skyline — a living panorama that changes character with every hour of the day. The interiors draw from a palette of Italian Statuario marble, dark bronze, and hand-stitched leather, representing the pinnacle of contemporary Gulf luxury.",
+    "amenities": ["Smart Home Automation","Rooftop Plunge Pool","Private Gym","Home Cinema","Concierge Service","Butler Service","Spa & Sauna","Wine Cellar"],
+    "agentInfo": { "name": "Marcus Holt", "phone": "+971509876543" },
+    "images": [
+      "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=1200",
+      "https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?w=1200",
+      "https://images.unsplash.com/photo-1560185008-a33f5c7b1844?w=1200",
+      "https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=1200",
+      "https://images.unsplash.com/photo-1484154218962-a197022b5858?w=1200"
+    ],
+    "coordinates": { "lat": 25.3670, "lng": 51.5500 },
+    "nearbyPlaces": [
+      { "name": "Hamad International Airport", "distance": "12 km" },
+      { "name": "Villaggio Mall", "distance": "8 km" },
+      { "name": "International School", "distance": "4.0 km" }
+    ]
+  },
+  {
+    "id": "property-006",
+    "title": "Al Barari Estate — Botanical Haven",
+    "price": "$520,000",
+    "priceNum": 520000,
+    "location": "Dubai, UAE",
+    "type": "Estate",
+    "city": "Dubai",
+    "beds": 6,
+    "baths": 7,
+    "sqft": 8400,
+    "videoSrc": "/src/assets/videos/vidu-video-3230724334416434.mp4",
+    "thumbnail": "/assets/thumbnails/property-006.jpg",
+    "tags": ["Estate", "Botanical Gardens", "Eco-Luxury"],
+    "fullDescription": "Set within Dubai's most celebrated eco-luxury community, Al Barari, this exceptional estate is surrounded by 3 million square feet of manicured gardens, lakes, and botanical parkland. The home itself is a sanctuary within a sanctuary — generous living spaces open seamlessly to private garden terraces, a lagoon-style pool, and an organic kitchen garden. Natural materials — reclaimed timber, volcanic stone, and living green walls — create an atmosphere of serene, breathing luxury entirely unlike anything else in the UAE.",
+    "amenities": ["Smart Home Automation","Infinity Pool","Private Gym","Home Cinema","Spa & Sauna","Concierge Service","Rooftop Terrace","Wine Cellar"],
+    "agentInfo": { "name": "Noor Al-Sayed", "phone": "+966553210987" },
+    "images": [
+      "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=1200",
+      "https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=1200",
+      "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1200",
+      "https://images.unsplash.com/photo-1576941089067-2de3c901e126?w=1200",
+      "https://images.unsplash.com/photo-1597218868981-1b68e15f0065?w=1200"
+    ],
+    "coordinates": { "lat": 25.0950, "lng": 55.2720 },
+    "nearbyPlaces": [
+      { "name": "Dubai International Airport", "distance": "22 km" },
+      { "name": "Dubai Hills Mall", "distance": "6 km" },
+      { "name": "International School", "distance": "3.8 km" }
+    ]
+  }
+]

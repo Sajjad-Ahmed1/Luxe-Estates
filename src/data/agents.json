@@ -1,0 +1,32 @@
+[
+  {
+    "id": "agent-001",
+    "name": "Layla Al-Rashid",
+    "phone": "+971501234567",
+    "experience": 12,
+    "specialization": "Waterfront & Luxury Villas",
+    "rating": 4.9,
+    "reviewCount": 148,
+    "avatar": "LA"
+  },
+  {
+    "id": "agent-002",
+    "name": "Marcus Holt",
+    "phone": "+971509876543",
+    "experience": 15,
+    "specialization": "Ultra-Prime Penthouses",
+    "rating": 5.0,
+    "reviewCount": 201,
+    "avatar": "MH"
+  },
+  {
+    "id": "agent-003",
+    "name": "Noor Al-Sayed",
+    "phone": "+966553210987",
+    "experience": 10,
+    "specialization": "Luxury Estates & Private Compounds",
+    "rating": 4.8,
+    "reviewCount": 94,
+    "avatar": "NA"
+  }
+]

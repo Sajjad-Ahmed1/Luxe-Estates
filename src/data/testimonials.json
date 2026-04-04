@@ -1,0 +1,29 @@
+[
+  {
+    "id": "t-001",
+    "name": "Ahmed Al-Mansouri",
+    "location": "Dubai, UAE",
+    "property": "Luxury Villa — Palm Waterfront",
+    "text": "Working with Luxe Estates was unlike any experience I've had in real estate. The video walkthroughs saved us weeks of in-person visits, and our agent Layla guided us through every step with unmatched professionalism. We found our dream home in under two weeks.",
+    "rating": 5,
+    "avatar": "AA"
+  },
+  {
+    "id": "t-002",
+    "name": "Sarah & James Whitfield",
+    "location": "London, UK",
+    "property": "The Residences — Sky Penthouse",
+    "text": "As international buyers, we needed complete trust in our agent. Marcus was exceptional — transparent, responsive, and deeply knowledgeable. The platform's immersive videos let us fall in love with the penthouse before we ever set foot in Abu Dhabi.",
+    "rating": 5,
+    "avatar": "SW"
+  },
+  {
+    "id": "t-003",
+    "name": "Khalid Al-Otaibi",
+    "location": "Riyadh, Saudi Arabia",
+    "property": "Grand Estate — Desert Oasis",
+    "text": "From the first video preview to the final signature, the entire process was seamless and dignified. Luxe Estates understands that buying a luxury property is not just a transaction — it is a life decision. I could not have asked for a better partner.",
+    "rating": 5,
+    "avatar": "KO"
+  }
+]
