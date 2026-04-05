@@ -71,16 +71,16 @@ export default function MortgageCalculator({ price }) {
       <div className="border-t border-white/10 pt-4 space-y-3">
         <div className="text-center">
           <p className="text-xs uppercase tracking-wider text-white/40 mb-1">Monthly Payment</p>
-          <p className="font-display text-3xl font-semibold" style={{ color: '#C9A84C' }}>{fmt(monthly)}</p>
+          <p className="font-display text-3xl font-semibold" style={{ color: '#C9A84C', fontVariantNumeric: 'lining-nums tabular-nums' }}>{fmt(monthly)}</p>
         </div>
         <div className="grid grid-cols-2 gap-3 text-center">
           <div className="bg-white/5 rounded-xl p-3">
             <p className="text-xs text-white/40 mb-1">Total Payment</p>
-            <p className="text-sm font-semibold text-white">{fmt(totalPayment)}</p>
+            <p className="text-sm font-semibold text-white" style={{ fontVariantNumeric: 'lining-nums tabular-nums' }}>{fmt(totalPayment)}</p>
           </div>
           <div className="bg-white/5 rounded-xl p-3">
             <p className="text-xs text-white/40 mb-1">Total Interest</p>
-            <p className="text-sm font-semibold text-white">{fmt(totalInterest)}</p>
+            <p className="text-sm font-semibold text-white" style={{ fontVariantNumeric: 'lining-nums tabular-nums' }}>{fmt(totalInterest)}</p>
           </div>
         </div>
       </div>

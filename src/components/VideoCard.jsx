@@ -46,12 +46,12 @@ export default function VideoCard({ property }) {
         </div>
 
         {/* Gradient scrim */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
 
         {/* Info */}
         <div className="absolute bottom-0 left-0 right-0 p-5 z-10">
           <h3 className="text-white font-semibold text-lg leading-snug mb-1">{property.title}</h3>
-          <p className="text-base font-bold mb-1" style={{ color: '#C9A84C', textShadow: '0 1px 4px rgba(0,0,0,0.8)' }}>{property.price}</p>
+          <p className="text-base font-bold mb-1" style={{ color: '#C9A84C', textShadow: '0 1px 6px rgba(0,0,0,1), 0 2px 12px rgba(0,0,0,0.9)' }}>{property.price}</p>
           <p className="text-white/70 text-sm mb-3">{property.location}</p>
           <div
             className="flex gap-4 text-xs font-medium pt-3"
