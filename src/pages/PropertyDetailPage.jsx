@@ -77,6 +77,7 @@ function PropertyDetailPage() {
   const [errors, setErrors]     = useState({});
   const [loading, setLoading]   = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [pdfLoading, setPdfLoading] = useState(false);
 
   useEffect(() => { if (property) addRecentlyViewed(property.id); }, [id]);
 
@@ -96,29 +97,71 @@ function PropertyDetailPage() {
   const recent   = recentlyViewed.filter((rid) => rid !== property.id)
                     .map((rid) => properties.find((p) => p.id === rid)).filter(Boolean);
 
-  // ── PDF Brochure — dynamic import لتفادي أي خطأ عند التحميل ───────
+  // ── PDF Brochure ────────────────────────────────────────────────
   const handleDownload = async () => {
+    if (pdfLoading) return;
+    setPdfLoading(true);
     try {
       const { jsPDF } = await import('jspdf');
       const doc = new jsPDF();
-      doc.setFontSize(20);
-      doc.text(property.title, 20, 25);
-      doc.setFontSize(13);
-      doc.text(`Price: ${property.price}`, 20, 38);
-      doc.text(`Location: ${property.location}`, 20, 47);
-      doc.text(`Beds: ${property.beds}   Baths: ${property.baths}   Sqft: ${property.sqft.toLocaleString()}`, 20, 56);
+
+      // Header bar
+      doc.setFillColor(201, 168, 76);
+      doc.rect(0, 0, 210, 12, 'F');
+      doc.setFontSize(8);
+      doc.setTextColor(255, 255, 255);
+      doc.text('LUXE ESTATES — PROPERTY BROCHURE', 20, 8);
+
+      // Title
+      doc.setTextColor(30, 30, 30);
+      doc.setFontSize(22);
+      doc.text(property.title, 20, 28);
+
+      // Price
+      doc.setFontSize(14);
+      doc.setTextColor(201, 168, 76);
+      doc.text(property.price, 20, 39);
+
+      // Location & stats
       doc.setFontSize(11);
-      doc.text('Overview:', 20, 70);
+      doc.setTextColor(80, 80, 80);
+      doc.text(`Location: ${property.location}`, 20, 50);
+      doc.text(`Beds: ${property.beds}   |   Baths: ${property.baths}   |   Sqft: ${property.sqft.toLocaleString()}`, 20, 59);
+
+      // Divider
+      doc.setDrawColor(201, 168, 76);
+      doc.setLineWidth(0.5);
+      doc.line(20, 65, 190, 65);
+
+      // Description
+      doc.setFontSize(10);
+      doc.setTextColor(30, 30, 30);
+      doc.text('Overview', 20, 73);
+      doc.setTextColor(80, 80, 80);
       const split = doc.splitTextToSize(property.fullDescription, 170);
-      doc.text(split, 20, 79);
-      const amenityY = 79 + split.length * 6 + 8;
-      doc.text('Amenities:', 20, amenityY);
-      property.amenities.forEach((a, i) => doc.text(`• ${a}`, 24, amenityY + 9 + i * 7));
-      const agentY = amenityY + 9 + property.amenities.length * 7 + 8;
-      doc.text(`Agent: ${property.agentInfo.name}   Phone: ${property.agentInfo.phone}`, 20, agentY);
+      doc.text(split, 20, 81);
+
+      // Amenities
+      const amenityY = 81 + split.length * 5.5 + 8;
+      doc.setTextColor(30, 30, 30);
+      doc.text('Amenities', 20, amenityY);
+      doc.setTextColor(80, 80, 80);
+      property.amenities.forEach((a, i) => doc.text(`• ${a}`, 24, amenityY + 8 + i * 6.5));
+
+      // Agent
+      const agentY = amenityY + 8 + property.amenities.length * 6.5 + 10;
+      doc.setDrawColor(230, 230, 230);
+      doc.line(20, agentY - 4, 190, agentY - 4);
+      doc.setTextColor(30, 30, 30);
+      doc.setFontSize(10);
+      doc.text(`Advisor: ${property.agentInfo.name}   |   ${property.agentInfo.phone}`, 20, agentY + 2);
+
       doc.save(`${property.title.replace(/[^a-z0-9]/gi, '-').toLowerCase()}-brochure.pdf`);
     } catch (err) {
       console.error('PDF generation failed:', err);
+      alert('Could not generate PDF. Please try again.');
+    } finally {
+      setPdfLoading(false);
     }
   };
 
@@ -355,6 +398,25 @@ function PropertyDetailPage() {
 
           {/* Mortgage Calculator */}
           <MortgageCalculator price={property.price} />
+
+          {/* Download Brochure — prominent card */}
+          <div className="rounded-2xl border bg-white/5 backdrop-blur-md p-5 flex items-center justify-between gap-4"
+            style={{ borderColor: 'rgba(201,168,76,0.3)' }}>
+            <div>
+              <p className="font-semibold text-white text-sm">Property Brochure</p>
+              <p className="text-xs text-white/45 mt-0.5">Full specs & details as PDF</p>
+            </div>
+            <button
+              onClick={handleDownload}
+              disabled={pdfLoading}
+              className="flex items-center gap-2 text-sm font-bold px-5 py-2.5 rounded-xl text-slate-950 hover:opacity-90 transition-opacity disabled:opacity-60 shrink-0"
+              style={{ backgroundColor: '#C9A84C' }}
+            >
+              {pdfLoading
+                ? <><Loader2 size={15} className="animate-spin" /> Generating…</>
+                : <><Download size={15} /> Download PDF</>}
+            </button>
+          </div>
         </div>
       </div>
 
