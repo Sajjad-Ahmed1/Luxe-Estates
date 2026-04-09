@@ -1,27 +1,56 @@
 import { useState, useMemo } from 'react';
+import { ChevronDown, ChevronUp } from 'lucide-react';
 
 function parsePrice(priceStr) {
-  // "$850,000" → 850000  (بدون ضرب بمليون)
   return parseFloat(priceStr.replace(/[^0-9.]/g, ''));
 }
 
 export default function MortgageCalculator({ price }) {
-  const [downPct, setDownPct] = useState(20);
-  const [term, setTerm]       = useState(25);
-  const [rate, setRate]       = useState(4.5);
+  const [downPct, setDownPct]       = useState(20);
+  const [term, setTerm]             = useState(25);
+  const [rate, setRate]             = useState(4.5);
+  const [showSchedule, setShowSchedule] = useState(false);
 
   const propertyPrice = parsePrice(price);
 
-  const { monthly, totalPayment, totalInterest } = useMemo(() => {
+  const { monthly, totalPayment, totalInterest, schedule } = useMemo(() => {
     const principal = propertyPrice * (1 - downPct / 100);
     const r = rate / 100 / 12;
     const n = term * 12;
+
+    let m, totalPayment, totalInterest;
     if (r === 0) {
-      const m = principal / n;
-      return { monthly: m, totalPayment: m * n, totalInterest: 0 };
+      m = principal / n;
+      totalPayment = m * n;
+      totalInterest = 0;
+    } else {
+      m = (principal * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+      totalPayment = m * n;
+      totalInterest = totalPayment - principal;
     }
-    const m = (principal * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
-    return { monthly: m, totalPayment: m * n, totalInterest: m * n - principal };
+
+    // بناء جدول السداد السنوي
+    const schedule = [];
+    let balance = principal;
+    for (let yr = 1; yr <= term; yr++) {
+      let yearPrincipal = 0;
+      let yearInterest  = 0;
+      for (let mo = 0; mo < 12; mo++) {
+        const intPart  = r === 0 ? 0 : balance * r;
+        const prinPart = m - intPart;
+        yearInterest  += intPart;
+        yearPrincipal += prinPart;
+        balance       -= prinPart;
+      }
+      schedule.push({
+        year:      yr,
+        principal: yearPrincipal,
+        interest:  yearInterest,
+        balance:   Math.max(0, balance),
+      });
+    }
+
+    return { monthly: m, totalPayment, totalInterest, schedule };
   }, [propertyPrice, downPct, term, rate]);
 
   const fmt = (n) =>
@@ -84,6 +113,51 @@ export default function MortgageCalculator({ price }) {
           </div>
         </div>
       </div>
+
+      {/* Amortization Schedule Toggle */}
+      <button
+        onClick={() => setShowSchedule((v) => !v)}
+        className="w-full flex items-center justify-between text-xs uppercase tracking-wider py-2 px-3 rounded-lg border border-white/10 hover:border-white/20 transition-colors"
+        style={{ color: '#C9A84C' }}
+      >
+        <span>Amortization Schedule</span>
+        {showSchedule ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
+      </button>
+
+      {/* Amortization Table */}
+      {showSchedule && (
+        <div className="overflow-auto max-h-64 rounded-xl border border-white/10">
+          <table className="w-full text-xs text-white/70 border-collapse">
+            <thead className="sticky top-0 bg-slate-900 text-white/40 uppercase tracking-wider">
+              <tr>
+                <th className="px-3 py-2 text-left">Year</th>
+                <th className="px-3 py-2 text-right">Principal</th>
+                <th className="px-3 py-2 text-right">Interest</th>
+                <th className="px-3 py-2 text-right">Balance</th>
+              </tr>
+            </thead>
+            <tbody>
+              {schedule.map((row, i) => (
+                <tr
+                  key={row.year}
+                  className="border-t border-white/5 hover:bg-white/5 transition-colors"
+                >
+                  <td className="px-3 py-2 text-white/50">{row.year}</td>
+                  <td className="px-3 py-2 text-right" style={{ color: '#C9A84C', fontVariantNumeric: 'lining-nums tabular-nums' }}>
+                    {fmt(row.principal)}
+                  </td>
+                  <td className="px-3 py-2 text-right text-white/60" style={{ fontVariantNumeric: 'lining-nums tabular-nums' }}>
+                    {fmt(row.interest)}
+                  </td>
+                  <td className="px-3 py-2 text-right text-white" style={{ fontVariantNumeric: 'lining-nums tabular-nums' }}>
+                    {fmt(row.balance)}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
     </div>
   );
 }
