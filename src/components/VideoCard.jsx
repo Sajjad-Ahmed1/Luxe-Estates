@@ -35,14 +35,13 @@ export default function VideoCard({ property }) {
         onMouseLeave={stopPlay}
         onTouchStart={startPlay}
       >
-        {/* Thumbnail — always visible until video plays */}
-        {!playing && (
-          <img
-            src={property.images?.[0] || property.thumbnail}
-            alt={property.title}
-            className="absolute inset-0 w-full h-full object-cover"
-          />
-        )}
+        {/* Thumbnail — always rendered, fades out when video plays */}
+        <img
+          src={property.images?.[0]}
+          alt=""
+          className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500"
+          style={{ opacity: playing ? 0 : 1 }}
+        />
 
         <video
           ref={videoRef}
@@ -50,8 +49,8 @@ export default function VideoCard({ property }) {
           muted
           loop
           playsInline
-          className="absolute inset-0 w-full h-full object-cover"
-          style={{ opacity: playing ? 1 : 0, transition: 'opacity 0.4s' }}
+          className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500"
+          style={{ opacity: playing ? 1 : 0 }}
         />
 
         {/* Tags */}

@@ -86,7 +86,6 @@ export default function Navbar() {
           <a
             href="mailto:hello@luxeestates.ae"
             className="hidden md:block text-sm font-semibold px-4 py-2 rounded-full transition-all duration-200 text-primary-gold border border-primary-gold hover:bg-primary-gold hover:text-slate-950"
-            style={{ color: '#C9A84C', borderColor: '#C9A84C' }}
           >
             Get in Touch
           </a>
