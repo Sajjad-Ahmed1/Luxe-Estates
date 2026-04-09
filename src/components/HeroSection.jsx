@@ -43,7 +43,7 @@ export default function HeroSection() {
         </motion.p>
 
         <motion.h1
-          className="font-display text-5xl md:text-7xl font-semibold text-white leading-tight max-w-4xl"
+          className="font-display text-4xl sm:text-5xl md:text-7xl font-semibold text-white leading-tight max-w-4xl"
           variants={fadeUp(0.3)}
           initial="hidden"
           animate="visible"
@@ -54,7 +54,7 @@ export default function HeroSection() {
         </motion.h1>
 
         <motion.p
-          className="mt-6 text-white/65 text-lg md:text-xl max-w-xl leading-relaxed"
+          className="mt-4 md:mt-6 text-white/65 text-base md:text-xl max-w-xl leading-relaxed"
           variants={fadeUp(0.5)}
           initial="hidden"
           animate="visible"

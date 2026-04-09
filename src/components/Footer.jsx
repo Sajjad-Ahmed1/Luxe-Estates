@@ -20,8 +20,8 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-slate-950 border-t border-white/8 pt-14 pb-8 px-6">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+    <footer className="bg-slate-950 border-t border-white/8 pt-10 md:pt-14 pb-8 px-4 md:px-6">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 mb-10 md:mb-12">
 
         {/* Column 1 — Brand */}
         <div>
@@ -70,18 +70,18 @@ export default function Footer() {
           {subscribed ? (
             <p className="text-sm" style={{ color: '#C9A84C' }}>You're on the list. Welcome.</p>
           ) : (
-            <form onSubmit={handleSubscribe} className="flex gap-2">
+            <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-2">
               <input
                 type="email"
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="your@email.com"
-                className="flex-1 bg-white/5 border border-white/10 rounded-lg px-3 py-2 text-sm text-white placeholder-white/30 focus:outline-none focus:border-white/30 transition-colors"
+                className="flex-1 bg-white/5 border border-white/10 rounded-lg px-3 py-2.5 text-sm text-white placeholder-white/30 focus:outline-none focus:border-white/30 transition-colors"
               />
               <button
                 type="submit"
-                className="px-4 py-2 rounded-lg text-sm font-semibold text-slate-950 hover:opacity-90 transition-opacity"
+                className="px-4 py-2.5 rounded-lg text-sm font-semibold text-slate-950 hover:opacity-90 transition-opacity whitespace-nowrap"
                 style={{ backgroundColor: '#C9A84C' }}
               >
                 Subscribe

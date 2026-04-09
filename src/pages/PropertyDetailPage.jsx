@@ -195,8 +195,7 @@ function PropertyDetailPage() {
       </Helmet>
 
       {/* ── Video header ──────────────────────────────────────────── */}
-      <div className="relative w-full bg-slate-900" style={{ height: '70vh' }}>
-        {/* poster يعرض الصورة الأولى أثناء تحميل الفيديو لمنع الشاشة السوداء */}
+      <div className="relative w-full bg-slate-900" style={{ height: '60vh', minHeight: 320 }}>
         <video
           src={videoSrc}
           poster={property.images[0]}
@@ -208,27 +207,19 @@ function PropertyDetailPage() {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-black/20 to-transparent" />
 
-        {/* Back + Download */}
-        <div className="absolute top-24 left-6 right-6 flex items-center justify-between">
+        {/* Back button */}
+        <div className="absolute top-20 left-4 md:left-6">
           <button
             onClick={() => navigate('/')}
-            className="flex items-center gap-2 text-white/80 hover:text-white transition-colors text-sm"
+            className="flex items-center gap-2 text-white/80 hover:text-white transition-colors text-sm bg-black/30 backdrop-blur-sm px-3 py-2 rounded-lg"
           >
-            <ArrowLeft size={16} />
-            Back to Listings
-          </button>
-          <button
-            onClick={handleDownload}
-            className="flex items-center gap-2 text-sm px-4 py-2 rounded-lg border border-white/20 hover:border-white/40 text-white/70 hover:text-white transition-all"
-            style={{ borderColor: 'rgba(201,168,76,0.4)', color: '#C9A84C' }}
-          >
-            <Download size={14} />
-            Download Brochure
+            <ArrowLeft size={15} />
+            <span className="hidden sm:inline">Back to Listings</span>
           </button>
         </div>
 
         {/* Title */}
-        <div className="absolute bottom-0 left-0 right-0 px-8 pb-10 max-w-5xl">
+        <div className="absolute bottom-0 left-0 right-0 px-4 md:px-8 pb-6 md:pb-10">
           <div className="flex flex-wrap gap-2 mb-3">
             {property.tags.map((tag) => (
               <span
@@ -240,8 +231,8 @@ function PropertyDetailPage() {
               </span>
             ))}
           </div>
-          <h1 className="font-display text-4xl md:text-5xl font-semibold leading-tight">{property.title}</h1>
-          <div className="flex items-center gap-2 mt-3 text-white/60 text-sm">
+          <h1 className="font-display text-2xl sm:text-4xl md:text-5xl font-semibold leading-tight">{property.title}</h1>
+          <div className="flex items-center gap-2 mt-2 text-white/60 text-sm">
             <MapPin size={14} />
             {property.location}
           </div>
@@ -254,7 +245,7 @@ function PropertyDetailPage() {
       </div>
 
       {/* ── Body ──────────────────────────────────────────────────── */}
-      <div className="max-w-7xl mx-auto px-6 py-12 grid grid-cols-1 lg:grid-cols-2 gap-14">
+      <div className="max-w-7xl mx-auto px-4 md:px-6 py-8 md:py-12 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-14">
 
         {/* LEFT */}
         <div className="space-y-10">
@@ -422,7 +413,7 @@ function PropertyDetailPage() {
 
       {/* ── Similar & Recently Viewed ─────────────────────────────── */}
       {(similar.length > 0 || recent.length > 0) && (
-        <div className="max-w-7xl mx-auto px-6 pb-16 space-y-12">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 pb-12 md:pb-16 space-y-10 md:space-y-12">
           {similar.length > 0 && (
             <div>
               <h2 className="font-display text-2xl font-semibold mb-6">Similar Properties</h2>
